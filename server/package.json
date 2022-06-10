@@ -1,0 +1,75 @@
+{
+  "name": "indexer-insights-backend",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "build:w": "tsc --project tsconfig.compile.json -w",
+    "start": "DEBUG_TRANSFORM=1 APP_NAME=metalocker tsnd --inspect --ignore-watch node_modules --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
+    "cleardb": "prisma migrate reset",
+    "studio": "yarn prisma studio",
+    "start:prod": "ts-node -r tsconfig-paths/register --transpile-only src/index.ts",
+    "prisma:migrate": "yarn prisma migrate",
+    "prisma:generate": "yarn prisma generate",
+    "transform": "DEBUG_TRANSFORM=1 ts-node --transpile-only src/transformer.ts",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.9.2",
+    "@syndicatedcrypto/telemetry-lib": "^1.0.7",
+    "@tsed/ajv": "^6.102.3",
+    "@tsed/common": "^6.102.3",
+    "@tsed/core": "^6.102.3",
+    "@tsed/di": "^6.102.3",
+    "@tsed/exceptions": "^6.102.3",
+    "@tsed/json-mapper": "^6.102.3",
+    "@tsed/platform-express": "^6.102.3",
+    "@tsed/schema": "^6.102.3",
+    "@tsed/swagger": "^6.102.3",
+    "ajv": "^8.10.0",
+    "axios": "^0.26.1",
+    "body-parser": "^1.19.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jose": "^4.6.0",
+    "luxon": "^2.3.1",
+    "method-override": "^3.0.0",
+    "tsconfig-paths": "^3.14.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@tsed/cli-plugin-prisma": "3.17.0",
+    "@types/compression": "^1.7.2",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/luxon": "^2.3.1",
+    "@types/method-override": "^0.0.32",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^17.0.18",
+    "@types/uuid": "^8.3.4",
+    "prisma": "^3.9.2",
+    "ts-node": "^10.5.0",
+    "ts-node-dev": "^1.1.8",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5",
+    "vitest": "^0.12.4"
+  },
+  "tsed": {
+    "packageManager": "yarn",
+    "convention": "default",
+    "architecture": "default"
+  },
+  "volta": {
+    "node": "18.0.0",
+    "yarn": "1.22.10"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
